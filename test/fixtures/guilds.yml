@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  faction: MyString
+  realm: MyString
+  email: MyString
+  password_hash: MyString
+  password_salt: MyString
+
+two:
+  name: MyString
+  faction: MyString
+  realm: MyString
+  email: MyString
+  password_hash: MyString
+  password_salt: MyString

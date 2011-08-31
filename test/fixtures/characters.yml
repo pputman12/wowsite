@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 1
+  guild_id: 1
+  race: MyString
+  class: MyString
+  level: 1
+
+two:
+  name: MyString
+  user_id: 1
+  guild_id: 1
+  race: MyString
+  class: MyString
+  level: 1

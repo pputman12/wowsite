@@ -1,0 +1,34 @@
+
+<p>
+  <b>Name:</b>
+  <%= @guild.name %>
+</p>
+
+<p>
+  <b>Faction:</b>
+  <%= @guild.faction %>
+</p>
+
+<p>
+  <b>Realm:</b>
+  <%= @guild.realm %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @guild.email %>
+</p>
+
+<p>
+  <b>Password hash:</b>
+  <%= @guild.password_hash %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%= @guild.password_salt %>
+</p>
+
+
+<%= link_to 'Edit', edit_guild_path(@guild) %> |
+<%= link_to 'Back', guilds_path %>

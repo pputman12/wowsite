@@ -1,0 +1,33 @@
+<h1>Listing characters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Guild</th>
+    <th>Race</th>
+    <th>Class</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @characters.each do |character| %>
+  <tr>
+    <td><%= character.name %></td>
+    <td><%= character.user_id %></td>
+    <td><%= character.guild_id %></td>
+    <td><%= character.race %></td>
+    <td><%= character.character_class %></td>
+    <td><%= character.level %></td>
+    <td><%= link_to 'Show', character %></td>
+    <td><%= link_to 'Edit', edit_character_path(character) %></td>
+    <td><%= link_to 'Destroy', character, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Character', new_character_path %>

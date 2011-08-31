@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @character.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @character.user_id %>
+</p>
+
+<p>
+  <b>Guild:</b>
+  <%= @character.guild_id %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%= @character.race %>
+</p>
+
+<p>
+  <b>Class:</b>
+  <%= @character.class %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @character.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>
