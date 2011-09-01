@@ -43,18 +43,22 @@ class CharactersController < ApplicationController
   # POST /characters.xml
   def create
     @character = Character.new(params[:character])
-    if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name)
-      @character.level = @character_struct.level
-      @character.race  = @character_struct.race
-      @character.class_id = @character_struct.class_id
-      @character.user = current_user
-      respond_to do |format|
-        if @character.save
-          format.html { redirect_to(@character, :notice => 'Character was successfully created.') }
-          format.xml  { render :xml => @character, :status => :created, :location => @character }
-        else
-          format.html { render :action => "new" }
-          format.xml  { render :xml => @character.errors, :status => :unprocessable_entity }
+    if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name, "guild")
+      if Guild.find(:all, :conditions => ['name = lower(?)', 'Chupathingy'.downcase])
+        @character.level = @character_struct.level
+        @character.race  = @character_struct.race
+        @character.class_id = @character_struct.class_id
+      
+
+        @character.user = current_user
+        respond_to do |format|
+          if @character.save
+            format.html { redirect_to(@character, :notice => 'Character was successfully created.') }
+            format.xml  { render :xml => @character, :status => :created, :location => @character }
+          else
+            format.html { render :action => "new" }
+            format.xml  { render :xml => @character.errors, :status => :unprocessable_entity }
+          end
         end
       end
     end
