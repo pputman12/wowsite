@@ -43,7 +43,7 @@ class CharactersController < ApplicationController
   # POST /characters.xml
   def create
     @character = Character.new(params[:character])
-    if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name, "guild")
+    if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name, "guild") 
       if @guild = Guild.find(:first, :conditions => ['name = lower(?)', @character_struct.guild.name.downcase])
 	@character.guild_id = @guild.id
         @character.level = @character_struct.level
@@ -63,7 +63,12 @@ class CharactersController < ApplicationController
         end
       end
     end
-  end
+  else
+   respond_to do |format|
+     format.html { render :action => "new" }
+     format.xml  { render :xml => @character.errors, :status => :unprocessable_entity }
+   end 
+ end
 
 
   # DELETE /characters/1

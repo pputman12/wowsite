@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @user.email %>
@@ -7,6 +5,8 @@
 
 <% @characters.each do |character| %>
   <%= link_to character.name, character_path(character) %>
-  <%= character.level %><br />
+  <%= character.level %>
+  <%= link_to character.guild.name, guild_path(character.guild) %>
+
 <% end %>
 
