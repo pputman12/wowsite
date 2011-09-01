@@ -5,3 +5,8 @@
   <%= @user.email %>
 </p>
 
+<% @characters.each do |character| %>
+  <%= link_to character.name, character_path(character) %>
+  <%= character.level %><br />
+<% end %>
+
