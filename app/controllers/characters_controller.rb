@@ -44,7 +44,8 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(params[:character])
     if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name, "guild")
-      if Guild.find(:all, :conditions => ['name = lower(?)', 'Chupathingy'.downcase])
+      if @guild = Guild.find(:first, :conditions => ['name = lower(?)', @character_struct.guild.name.downcase])
+	@character.guild_id = @guild.id
         @character.level = @character_struct.level
         @character.race  = @character_struct.race
         @character.class_id = @character_struct.class_id
