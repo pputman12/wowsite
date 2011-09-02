@@ -29,12 +29,15 @@
   <%= @character.level %>
 </p>
 <p>
-  <% stats = Character.get_stats(@character) %>
-  <% stats.each_pair do |k,v| %>
-    <% unless k == "_id" %>
-      <%=  "#{k} : #{v}" %><br />
-    <% end %>
-  <% end %> 
+  <% if stats = Character.get_stats(@character) %>
+    <% stats.each_pair do |k,v| %>
+      <% unless k == "_id" %>
+        <%=  "#{k} : #{v}" %><br />
+      <% end %>
+    <% end %> 
+  <% else %>
+    <%= "Stats not retrieved yet" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_character_path(@character) %> |
