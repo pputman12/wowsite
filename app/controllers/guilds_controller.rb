@@ -73,10 +73,9 @@ class GuildsController < ApplicationController
       end
     else 
       respond_to do |format|
-        format.html {render :action => "edit", :notice=> 'Unauthorized' }
+        format.html { redirect_to(@guild, :notice => 'Unauthorized') }
       end
     end
-    
   end
 
   # DELETE /guilds/1
