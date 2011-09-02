@@ -28,7 +28,14 @@
   <b>Level:</b>
   <%= @character.level %>
 </p>
-
+<p>
+  <% stats = Character.get_stats(@character) %>
+  <% stats.each_pair do |k,v| %>
+    <% unless k == "_id" %>
+      <%=  "#{k} : #{v}" %><br />
+    <% end %>
+  <% end %> 
+</p>
 
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
