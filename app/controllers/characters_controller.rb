@@ -72,9 +72,9 @@ class CharactersController < ApplicationController
   def destroy
     @character = Character.find(params[:id])
     @character.destroy
-
+    @guild = @character.guild
     respond_to do |format|
-      format.html { redirect_to(characters_url) }
+      format.html { redirect_to(guild_path) }
       format.xml  { head :ok }
     end
   end
