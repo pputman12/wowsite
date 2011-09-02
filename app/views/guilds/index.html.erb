@@ -15,8 +15,9 @@
     <td><%= link_to guild.name, guild %></td>
     <td><%= guild.realm %></td>
     <td><%= guild.email %></td>
-    <td><%= link_to 'Edit', edit_guild_path(guild) %></td>
-    <td><%= link_to 'Destroy', guild, :confirm => 'Are you sure?', :method => :delete %></td>
+   
+    <td><%= link_to 'Edit', edit_guild_path(guild) if guild.user == current_user %></td>
+    <td><%= link_to 'Destroy', guild, :confirm => 'Are you sure?', :method => :delete if guild.user == current_user %></td>
   </tr>
 <% end %>
 </table>
