@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     logger.info current_user.to_yaml
     @user = current_user
     @characters = @user.characters
+    @guilds = @user.guilds
     respond_to do |format|
       format.html # show.html.erb
       

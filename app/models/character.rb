@@ -5,6 +5,5 @@ class Character < ActiveRecord::Base
   def self.get_stats(character)
   
     @stats = Stat.where(character_id:  character.id).last
-  
   end
 end

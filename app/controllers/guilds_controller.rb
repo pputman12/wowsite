@@ -44,6 +44,8 @@ class GuildsController < ApplicationController
   # POST /guilds.xml
   def create
     @guild = Guild.new(params[:guild])
+    @guild.user = current_user
+    @guild.email = current_user.email
     respond_to do |format|
       if WowCommunityApi::Guild.find_by_realm_and_name(@guild.realm, @guild.name) && @guild.save
         format.html { redirect_to(@guild, :notice => 'Guild was successfully registered.') }
@@ -61,7 +63,7 @@ class GuildsController < ApplicationController
     @guild = Guild.find(params[:id])
 
     respond_to do |format|
-      if @guild.update_attributes(params[:guild])
+      if @guild.save
         format.html { redirect_to(@guild, :notice => 'Guild was successfully updated.') }
         format.xml  { head :ok }
       else
