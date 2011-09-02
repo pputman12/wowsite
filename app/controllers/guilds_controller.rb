@@ -61,16 +61,22 @@ class GuildsController < ApplicationController
   # PUT /guilds/1.xml
   def update
     @guild = Guild.find(params[:id])
-
-    respond_to do |format|
-      if @guild.save
-        format.html { redirect_to(@guild, :notice => 'Guild was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @guild.errors, :status => :unprocessable_entity }
+    if @guild.user == current_user 
+      respond_to do |format|
+        if @guild.save
+          format.html { redirect_to(@guild, :notice => 'Guild was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @guild.errors, :status => :unprocessable_entity }
+        end
+      end
+    else 
+      respond_to do |format|
+        format.html {render :action => "edit", :notice=> 'Unauthorized' }
       end
     end
+    
   end
 
   # DELETE /guilds/1

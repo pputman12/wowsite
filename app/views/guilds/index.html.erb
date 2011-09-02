@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Faction</th>
     <th>Realm</th>
     <th>Email</th>
     <th></th>
@@ -14,7 +13,6 @@
 <% @guilds.each do |guild| %>
   <tr>
     <td><%= link_to guild.name, guild %></td>
-    <td><%= guild.faction %></td>
     <td><%= guild.realm %></td>
     <td><%= guild.email %></td>
     <td><%= link_to 'Edit', edit_guild_path(guild) %></td>
