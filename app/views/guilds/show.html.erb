@@ -20,15 +20,8 @@
 </p>
 
 <p>
-  <b>Password hash:</b>
-  <%= @guild.password_hash %>
+  <b><%= link_to "Guild Roster", guild_characters_path(@guild) %></b>
 </p>
-
-<p>
-  <b>Password salt:</b>
-  <%= @guild.password_salt %>
-</p>
-
 
 <%= link_to 'Edit', edit_guild_path(@guild) %> |
 <%= link_to 'Back', guilds_path %>

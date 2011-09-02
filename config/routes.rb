@@ -5,8 +5,9 @@ Guildsite::Application.routes.draw do
     get 'profile', :to => 'users#show'
   end
 
-  resources :guilds
-  
+  resources :guilds do
+    resources :characters  
+  end 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
