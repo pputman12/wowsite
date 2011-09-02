@@ -70,11 +70,12 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.xml
   def destroy
+
     @character = Character.find(params[:id])
-    @character.destroy
     @guild = @character.guild
+    @character.destroy
     respond_to do |format|
-      format.html { redirect_to(guild_path) }
+      format.html { redirect_to(guild_characters_path(@guild)) }
       format.xml  { head :ok }
     end
   end
