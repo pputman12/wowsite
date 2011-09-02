@@ -1,11 +1,107 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  health: 1
+  powerType: MyString
+  power: 1
+  str: 1
+  agi: 1
+  sta: 1
+  int: 1
+  spr: 1
+  attackPower: 1
+  rangedAttackPower: 1
+  master: 1.5
+  masteryRating: 1
+  crit: 1.5
+  critRating: 1
+  hitPercent: 1.5
+  hitRating: 1
+  hasteRating: 1
+  expertiseRating: 1
+  spellPower: 1
+  spellPen: 1
+  spellCrit: 1.5
+  spellCritRating: 1
+  spellHitPercent: 1.5
+  spellHitRating: 1
+  mana5: 1.5
+  mana5Combat: 1.5
+  armor: 1
+  dodge: 1.5
+  dodgeRating: 1
+  parry: 1.5
+  parryRating: 1
+  block: 1.5
+  blockRating: 1
+  resil: 
+  mainHandDmgMax: 1.5
+  mainHandSpeed: 1.5
+  mainHandDps: 1.5
+  mainHandExpertise: 1
+  offHandDmgMin: 1.5
+  offHandDmgMax: 1.5
+  offHandSpeed: 1.5
+  offHandDps: 1.5
+  offHandExpertise: 1
+  rangedDmgMin: 1.5
+  rangedDmgMax: 1.5
+  rangedSpeed: 1.5
+  rangedDps: 1.5
+  rangedCrit: 1.5
+  rangedCritRating: 1
+  rangedHitPercent: 1.5
+  rangedHitRating: 1
+
+two:
+  health: 1
+  powerType: MyString
+  power: 1
+  str: 1
+  agi: 1
+  sta: 1
+  int: 1
+  spr: 1
+  attackPower: 1
+  rangedAttackPower: 1
+  master: 1.5
+  masteryRating: 1
+  crit: 1.5
+  critRating: 1
+  hitPercent: 1.5
+  hitRating: 1
+  hasteRating: 1
+  expertiseRating: 1
+  spellPower: 1
+  spellPen: 1
+  spellCrit: 1.5
+  spellCritRating: 1
+  spellHitPercent: 1.5
+  spellHitRating: 1
+  mana5: 1.5
+  mana5Combat: 1.5
+  armor: 1
+  dodge: 1.5
+  dodgeRating: 1
+  parry: 1.5
+  parryRating: 1
+  block: 1.5
+  blockRating: 1
+  resil: 
+  mainHandDmgMax: 1.5
+  mainHandSpeed: 1.5
+  mainHandDps: 1.5
+  mainHandExpertise: 1
+  offHandDmgMin: 1.5
+  offHandDmgMax: 1.5
+  offHandSpeed: 1.5
+  offHandDps: 1.5
+  offHandExpertise: 1
+  rangedDmgMin: 1.5
+  rangedDmgMax: 1.5
+  rangedSpeed: 1.5
+  rangedDps: 1.5
+  rangedCrit: 1.5
+  rangedCritRating: 1
+  rangedHitPercent: 1.5
+  rangedHitRating: 1

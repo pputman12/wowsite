@@ -1,0 +1,123 @@
+<h1>Listing stats</h1>
+
+<table>
+  <tr>
+    <th>Health</th>
+    <th>Powertype</th>
+    <th>Power</th>
+    <th>Str</th>
+    <th>Agi</th>
+    <th>Sta</th>
+    <th>Int</th>
+    <th>Spr</th>
+    <th>Attackpower</th>
+    <th>Rangedattackpower</th>
+    <th>Master</th>
+    <th>Masteryrating</th>
+    <th>Crit</th>
+    <th>Critrating</th>
+    <th>Hitpercent</th>
+    <th>Hitrating</th>
+    <th>Hasterating</th>
+    <th>Expertiserating</th>
+    <th>Spellpower</th>
+    <th>Spellpen</th>
+    <th>Spellcrit</th>
+    <th>Spellcritrating</th>
+    <th>Spellhitpercent</th>
+    <th>Spellhitrating</th>
+    <th>Mana5</th>
+    <th>Mana5combat</th>
+    <th>Armor</th>
+    <th>Dodge</th>
+    <th>Dodgerating</th>
+    <th>Parry</th>
+    <th>Parryrating</th>
+    <th>Block</th>
+    <th>Blockrating</th>
+    <th>Resil</th>
+    <th>Mainhanddmgmax</th>
+    <th>Mainhandspeed</th>
+    <th>Mainhanddps</th>
+    <th>Mainhandexpertise</th>
+    <th>Offhanddmgmin</th>
+    <th>Offhanddmgmax</th>
+    <th>Offhandspeed</th>
+    <th>Offhanddps</th>
+    <th>Offhandexpertise</th>
+    <th>Rangeddmgmin</th>
+    <th>Rangeddmgmax</th>
+    <th>Rangedspeed</th>
+    <th>Rangeddps</th>
+    <th>Rangedcrit</th>
+    <th>Rangedcritrating</th>
+    <th>Rangedhitpercent</th>
+    <th>Rangedhitrating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stats.each do |stat| %>
+  <tr>
+    <td><%= stat.health %></td>
+    <td><%= stat.powerType %></td>
+    <td><%= stat.power %></td>
+    <td><%= stat.str %></td>
+    <td><%= stat.agi %></td>
+    <td><%= stat.sta %></td>
+    <td><%= stat.int %></td>
+    <td><%= stat.spr %></td>
+    <td><%= stat.attackPower %></td>
+    <td><%= stat.rangedAttackPower %></td>
+    <td><%= stat.master %></td>
+    <td><%= stat.masteryRating %></td>
+    <td><%= stat.crit %></td>
+    <td><%= stat.critRating %></td>
+    <td><%= stat.hitPercent %></td>
+    <td><%= stat.hitRating %></td>
+    <td><%= stat.hasteRating %></td>
+    <td><%= stat.expertiseRating %></td>
+    <td><%= stat.spellPower %></td>
+    <td><%= stat.spellPen %></td>
+    <td><%= stat.spellCrit %></td>
+    <td><%= stat.spellCritRating %></td>
+    <td><%= stat.spellHitPercent %></td>
+    <td><%= stat.spellHitRating %></td>
+    <td><%= stat.mana5 %></td>
+    <td><%= stat.mana5Combat %></td>
+    <td><%= stat.armor %></td>
+    <td><%= stat.dodge %></td>
+    <td><%= stat.dodgeRating %></td>
+    <td><%= stat.parry %></td>
+    <td><%= stat.parryRating %></td>
+    <td><%= stat.block %></td>
+    <td><%= stat.blockRating %></td>
+    <td><%= stat.resil %></td>
+    <td><%= stat.mainHandDmgMax %></td>
+    <td><%= stat.mainHandSpeed %></td>
+    <td><%= stat.mainHandDps %></td>
+    <td><%= stat.mainHandExpertise %></td>
+    <td><%= stat.offHandDmgMin %></td>
+    <td><%= stat.offHandDmgMax %></td>
+    <td><%= stat.offHandSpeed %></td>
+    <td><%= stat.offHandDps %></td>
+    <td><%= stat.offHandExpertise %></td>
+    <td><%= stat.rangedDmgMin %></td>
+    <td><%= stat.rangedDmgMax %></td>
+    <td><%= stat.rangedSpeed %></td>
+    <td><%= stat.rangedDps %></td>
+    <td><%= stat.rangedCrit %></td>
+    <td><%= stat.rangedCritRating %></td>
+    <td><%= stat.rangedHitPercent %></td>
+    <td><%= stat.rangedHitRating %></td>
+    <td><%= link_to 'Show', stat %></td>
+    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+    <td><%= link_to 'Destroy', stat, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stat', new_stat_path %>

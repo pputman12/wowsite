@@ -1,4 +1,6 @@
 Guildsite::Application.routes.draw do
+  resources :stats
+
   resources :characters
 
   devise_for :users do

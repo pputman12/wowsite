@@ -1,0 +1,221 @@
+<%= form_for(@stat) do |f| %>
+  <% if @stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stat.errors.count, "error") %> prohibited this stat from being saved:</h2>
+
+      <ul>
+      <% @stat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :health %><br />
+    <%= f.text_field :health %>
+  </div>
+  <div class="field">
+    <%= f.label :powerType %><br />
+    <%= f.text_field :powerType %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br />
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :str %><br />
+    <%= f.text_field :str %>
+  </div>
+  <div class="field">
+    <%= f.label :agi %><br />
+    <%= f.text_field :agi %>
+  </div>
+  <div class="field">
+    <%= f.label :sta %><br />
+    <%= f.text_field :sta %>
+  </div>
+  <div class="field">
+    <%= f.label :int %><br />
+    <%= f.text_field :int %>
+  </div>
+  <div class="field">
+    <%= f.label :spr %><br />
+    <%= f.text_field :spr %>
+  </div>
+  <div class="field">
+    <%= f.label :attackPower %><br />
+    <%= f.text_field :attackPower %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedAttackPower %><br />
+    <%= f.text_field :rangedAttackPower %>
+  </div>
+  <div class="field">
+    <%= f.label :master %><br />
+    <%= f.text_field :master %>
+  </div>
+  <div class="field">
+    <%= f.label :masteryRating %><br />
+    <%= f.text_field :masteryRating %>
+  </div>
+  <div class="field">
+    <%= f.label :crit %><br />
+    <%= f.text_field :crit %>
+  </div>
+  <div class="field">
+    <%= f.label :critRating %><br />
+    <%= f.text_field :critRating %>
+  </div>
+  <div class="field">
+    <%= f.label :hitPercent %><br />
+    <%= f.text_field :hitPercent %>
+  </div>
+  <div class="field">
+    <%= f.label :hitRating %><br />
+    <%= f.text_field :hitRating %>
+  </div>
+  <div class="field">
+    <%= f.label :hasteRating %><br />
+    <%= f.text_field :hasteRating %>
+  </div>
+  <div class="field">
+    <%= f.label :expertiseRating %><br />
+    <%= f.text_field :expertiseRating %>
+  </div>
+  <div class="field">
+    <%= f.label :spellPower %><br />
+    <%= f.text_field :spellPower %>
+  </div>
+  <div class="field">
+    <%= f.label :spellPen %><br />
+    <%= f.text_field :spellPen %>
+  </div>
+  <div class="field">
+    <%= f.label :spellCrit %><br />
+    <%= f.text_field :spellCrit %>
+  </div>
+  <div class="field">
+    <%= f.label :spellCritRating %><br />
+    <%= f.text_field :spellCritRating %>
+  </div>
+  <div class="field">
+    <%= f.label :spellHitPercent %><br />
+    <%= f.text_field :spellHitPercent %>
+  </div>
+  <div class="field">
+    <%= f.label :spellHitRating %><br />
+    <%= f.text_field :spellHitRating %>
+  </div>
+  <div class="field">
+    <%= f.label :mana5 %><br />
+    <%= f.text_field :mana5 %>
+  </div>
+  <div class="field">
+    <%= f.label :mana5Combat %><br />
+    <%= f.text_field :mana5Combat %>
+  </div>
+  <div class="field">
+    <%= f.label :armor %><br />
+    <%= f.text_field :armor %>
+  </div>
+  <div class="field">
+    <%= f.label :dodge %><br />
+    <%= f.text_field :dodge %>
+  </div>
+  <div class="field">
+    <%= f.label :dodgeRating %><br />
+    <%= f.text_field :dodgeRating %>
+  </div>
+  <div class="field">
+    <%= f.label :parry %><br />
+    <%= f.text_field :parry %>
+  </div>
+  <div class="field">
+    <%= f.label :parryRating %><br />
+    <%= f.text_field :parryRating %>
+  </div>
+  <div class="field">
+    <%= f.label :block %><br />
+    <%= f.text_field :block %>
+  </div>
+  <div class="field">
+    <%= f.label :blockRating %><br />
+    <%= f.text_field :blockRating %>
+  </div>
+  <div class="field">
+    <%= f.label :resil %><br />
+    <%= f.text_field :resil %>
+  </div>
+  <div class="field">
+    <%= f.label :mainHandDmgMax %><br />
+    <%= f.text_field :mainHandDmgMax %>
+  </div>
+  <div class="field">
+    <%= f.label :mainHandSpeed %><br />
+    <%= f.text_field :mainHandSpeed %>
+  </div>
+  <div class="field">
+    <%= f.label :mainHandDps %><br />
+    <%= f.text_field :mainHandDps %>
+  </div>
+  <div class="field">
+    <%= f.label :mainHandExpertise %><br />
+    <%= f.text_field :mainHandExpertise %>
+  </div>
+  <div class="field">
+    <%= f.label :offHandDmgMin %><br />
+    <%= f.text_field :offHandDmgMin %>
+  </div>
+  <div class="field">
+    <%= f.label :offHandDmgMax %><br />
+    <%= f.text_field :offHandDmgMax %>
+  </div>
+  <div class="field">
+    <%= f.label :offHandSpeed %><br />
+    <%= f.text_field :offHandSpeed %>
+  </div>
+  <div class="field">
+    <%= f.label :offHandDps %><br />
+    <%= f.text_field :offHandDps %>
+  </div>
+  <div class="field">
+    <%= f.label :offHandExpertise %><br />
+    <%= f.text_field :offHandExpertise %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedDmgMin %><br />
+    <%= f.text_field :rangedDmgMin %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedDmgMax %><br />
+    <%= f.text_field :rangedDmgMax %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedSpeed %><br />
+    <%= f.text_field :rangedSpeed %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedDps %><br />
+    <%= f.text_field :rangedDps %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedCrit %><br />
+    <%= f.text_field :rangedCrit %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedCritRating %><br />
+    <%= f.text_field :rangedCritRating %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedHitPercent %><br />
+    <%= f.text_field :rangedHitPercent %>
+  </div>
+  <div class="field">
+    <%= f.label :rangedHitRating %><br />
+    <%= f.text_field :rangedHitRating %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

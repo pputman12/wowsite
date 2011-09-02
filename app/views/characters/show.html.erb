@@ -29,16 +29,12 @@
   <%= @character.level %>
 </p>
 <p>
-  <% if stats = Character.get_stats(@character) %>
-    <% stats.each_pair do |k,v| %>
-      <% unless k == "_id" %>
-        <%=  "#{k} : #{v}" %><br />
-      <% end %>
-    <% end %> 
-  <% else %>
-    <%= "Stats not retrieved yet" %>
+
+  <%  if stats = Character.get_stats(@character) %>
+    <% stats.attributes.each_pair do |name, value| %> 
+      <%= "#{name} = #{value}" unless name == "_id" %><br /> 
+    <% end %>
   <% end %>
 </p>
-
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', guild_characters_path(@character.guild) %>

@@ -3,9 +3,8 @@ class Character < ActiveRecord::Base
   belongs_to :user
   validates_uniqueness_of :name
   def self.get_stats(character)
-      
-    db = Mongo::Connection.new.db("mydb")
-    coll = db.collection("#{character.name}Collection") 
-    coll.find_one()
+  
+    @stats = Stat.where(character_id:  character.id).last
+  
   end
 end
