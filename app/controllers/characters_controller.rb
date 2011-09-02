@@ -46,7 +46,7 @@ class CharactersController < ApplicationController
     if @character_struct = WowCommunityApi::Character.find_by_realm_and_name(@character.realm, @character.name, "guild") 
       if @guild = Guild.find(:first, :conditions => ['name = lower(?)', @character_struct.guild.name.downcase])
 	@character.guild_id = @guild.id
-        @character.update_attributes WowCommunityApi::Character.find_by_realm_and_name("akama", "evol").marshal_dump	
+        @character.update_attributes WowCommunityApi::Character.find_by_realm_and_name(@character_struct.realm, @character_struct.name).marshal_dump	
         @character.user = current_user
         respond_to do |format|
           if @character.save
