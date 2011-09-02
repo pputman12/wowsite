@@ -6,7 +6,7 @@
 <% @characters.each do |character| %>
   <%= link_to character.name, character_path(character) %>
   <%= character.level %>
-  <%= link_to character.guild.name, guild_path(character.guild) %>
+  <%= link_to character.guild.name, guild_path(character.guild) %><br />
 
 <% end %>
 

@@ -4,7 +4,9 @@ class CharactersController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @characters = Character.all
+   
+    @guild = Guild.find(params[:guild_id])
+    @characters = @guild.characters
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +18,7 @@ class CharactersController < ApplicationController
   # GET /characters/1.xml
   def show
     @character = Character.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @character }
