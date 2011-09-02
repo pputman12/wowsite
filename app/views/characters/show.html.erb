@@ -6,33 +6,20 @@
 
 <p>
   <b>User:</b>
-  <%= @character.user_id %>
+  <%= @character.user.email %>
 </p>
 
 <p>
   <b>Guild:</b>
-  <%= @character.guild_id %>
+  <%= @character.guild.name %>
 </p>
 
-<p>
-  <b>Race:</b>
-  <%= @character.race %>
-</p>
 
-<p>
-  <b>Class:</b>
-  <%= @character.class %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%= @character.level %>
-</p>
 <p>
 
   <%  if stats = Character.get_stats(@character) %>
     <% stats.attributes.each_pair do |name, value| %> 
-      <%= "#{name} = #{value}" unless name == "_id" %><br /> 
+      <%= "#{name} = #{value}" unless name == "_id" || name == "character_id" %><br /> 
     <% end %>
   <% end %>
 </p>
