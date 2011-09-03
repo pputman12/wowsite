@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110901201008) do
+ActiveRecord::Schema.define(:version => 20110831023926) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -20,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20110901201008) do
     t.integer  "race"
     t.integer  "class_id"
     t.integer  "level"
-    t.integer  "lastModified"
+    t.string   "lastModified"
     t.string   "realm"
     t.integer  "gender"
     t.integer  "achievementPoints"
@@ -37,64 +36,6 @@ ActiveRecord::Schema.define(:version => 20110901201008) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "stats", :force => true do |t|
-    t.integer  "character_id"
-    t.integer  "health"
-    t.string   "powerType"
-    t.string   "power"
-    t.integer  "str"
-    t.integer  "agi"
-    t.integer  "sta"
-    t.integer  "int"
-    t.integer  "spr"
-    t.integer  "attackPower"
-    t.integer  "rangedAttackPower"
-    t.float    "mastery"
-    t.integer  "masteryRating"
-    t.float    "crit"
-    t.integer  "critRating"
-    t.float    "hitPercent"
-    t.integer  "hitRating"
-    t.integer  "hasteRating"
-    t.integer  "expertiseRating"
-    t.integer  "spellPower"
-    t.integer  "spellPen"
-    t.float    "spellCrit"
-    t.integer  "spellCritRating"
-    t.float    "spellHitPercent"
-    t.integer  "spellHitRating"
-    t.float    "mana5"
-    t.float    "mana5Combat"
-    t.integer  "armor"
-    t.float    "dodge"
-    t.integer  "dodgeRating"
-    t.float    "parry"
-    t.integer  "parryRating"
-    t.float    "block"
-    t.integer  "blockRating"
-    t.integer  "resil"
-    t.float    "mainHandDmgMin"
-    t.float    "mainHandDmgMax"
-    t.float    "mainHandSpeed"
-    t.float    "mainHandDps"
-    t.integer  "mainHandExpertise"
-    t.float    "offHandDmgMin"
-    t.float    "offHandDmgMax"
-    t.float    "offHandSpeed"
-    t.float    "offHandDps"
-    t.integer  "offHandExpertise"
-    t.float    "rangedDmgMin"
-    t.float    "rangedDmgMax"
-    t.float    "rangedSpeed"
-    t.float    "rangedDps"
-    t.float    "rangedCrit"
-    t.integer  "rangedCritRating"
-    t.float    "rangedHitPercent"
-    t.integer  "rangedHitRating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

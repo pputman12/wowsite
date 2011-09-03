@@ -1,13 +1,13 @@
-source 'http://rubygems.org'
-
+source "http://torquebox.org/2x/builds/LATEST/gem-repo/"
+source :rubygems
 
 
 gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
+gem 'activerecord-jdbcpostgresql-adapter'
+#gem 'sqlite3'
 gem 'bson_ext'
 gem 'mongoid'
 gem "bcrypt-ruby", :require => "bcrypt"
@@ -35,3 +35,4 @@ gem "devise"
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "torquebox", "~> 2.x.incremental"

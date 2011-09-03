@@ -7,7 +7,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer :race
       t.integer :class_id
       t.integer :level
-      t.integer :lastModified
+      t.string :lastModified
       t.string :realm
       t.integer :gender
       t.integer :achievementPoints
