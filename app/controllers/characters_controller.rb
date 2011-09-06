@@ -58,13 +58,17 @@ class CharactersController < ApplicationController
             format.html { render :action => "new" }
           end
         end
+      else    
+        respond_to do |format|
+           format.html { render :action => "new" }
+         end
       end
     
-  else
-   respond_to do |format|
-     format.html { render :action => "new" }
-   end 
-  end
+   else
+     respond_to do |format|
+       format.html { render :action => "new" }
+     end 
+   end
  end
 
 
