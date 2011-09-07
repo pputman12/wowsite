@@ -12,7 +12,7 @@
 <% @topics.each do |topic| %>
   <tr>
     <td><%= topic.name %></td>
-    <td><%= topic.guild_id %></td>
+    <td><%= topic.guild.name %></td>
     <td><%= link_to 'Show', topic_posts_path(topic) %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>

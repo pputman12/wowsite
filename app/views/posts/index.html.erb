@@ -2,8 +2,6 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Topic</th>
     <th>Name</th>
     <th>Context</th>
     <th></th>
@@ -13,11 +11,8 @@
 
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.user_id %></td>
-    <td><%= post.topic_id %></td>
-    <td><%= post.name %></td>
+    <td><%= link_to post.name, topic_post_path(post.topic, post ) %></td>
     <td><%= post.context %></td>
-    <td><%= link_to 'Show', topic_post_path(post.topic, post) %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
