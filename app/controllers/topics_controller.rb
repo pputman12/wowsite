@@ -43,6 +43,7 @@ class TopicsController < ApplicationController
   def create
     @guild = Guild.find(params[:guild_id])
     @topic = @guild.topics.build(params[:topic])
+    @topic.user = current_user
 
     respond_to do |format|
       if @topic.save
@@ -78,7 +79,7 @@ class TopicsController < ApplicationController
     @topic.destroy
 
     respond_to do |format|
-      format.html { redirect_to(topics_url) }
+      format.html { redirect_to(guild_topics_path(@topic.guild)) }
       format.xml  { head :ok }
     end
   end

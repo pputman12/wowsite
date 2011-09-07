@@ -44,6 +44,7 @@ class PostsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.build(params[:post])
+    @post.user = current_user
     
     respond_to do |format|
       if @post.save
