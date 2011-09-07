@@ -2,8 +2,9 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
   def index
-    @topics = Topic.all
-
+    @guild = Guild.find(params[:guild_id])
+    @topics = @guild.topics
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @topics }
