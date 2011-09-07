@@ -21,6 +21,7 @@
 
 <p>
   <b><%= link_to "Guild Roster", guild_characters_path(@guild) %></b>
+  <b><%= link_to "Forum Topics", guild_topics_path(@guild)%></b>
 </p>
 
 <%= link_to 'Edit', edit_guild_path(@guild) if @guild.user == current_user %> |

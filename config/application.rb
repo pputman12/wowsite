@@ -38,5 +38,8 @@ module Guildsite
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.generators do | g |
+      g.orm :active_record
+    end
   end
 end

@@ -1,4 +1,8 @@
 Guildsite::Application.routes.draw do
+  resources :posts
+
+  resources :topics
+
   resources :stats
 
   resources :characters
@@ -8,8 +12,16 @@ Guildsite::Application.routes.draw do
   end
 
   resources :guilds do
-    resources :characters  
+    resources :topics
   end 
+  
+  resources :topics do
+    resources :posts
+  end
+  
+  resources :guilds do
+    resources :characters 
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
