@@ -1,23 +1,20 @@
-<h1>Listing posts</h1>
+<br /><h3><%= @topic.name %></h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Context</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to post.name, topic_post_path(post.topic, post ) %></td>
-    <td><%= post.context %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <table>
+    <tr>
+      <td><%= post.user.email %></td>
+    </tr>
+    <tr>
+      <td><%= post.context %></td>
+    </tr>
+    <tr>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  </table><br /><br />
 <% end %>
-</table>
 
 <br />
 
