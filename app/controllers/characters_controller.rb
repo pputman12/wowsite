@@ -29,7 +29,7 @@ class CharactersController < ApplicationController
   # GET /characters/new.xml
   def new
     @character = Character.new
-
+    @character.build_guild
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @character }
@@ -60,8 +60,8 @@ class CharactersController < ApplicationController
         end
       else    
         respond_to do |format|
-           format.html { render :action => "new" }
-         end
+          format.html { render :action => "new" }
+        end
       end
     
    else

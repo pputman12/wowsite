@@ -19,6 +19,12 @@
     <%= f.label :realm %><br />
     <%= f.text_field :realm %>
   </div>
+  <% f.fields_for :guilds do |g| %>
+    <div class="field">
+      <%= g.label :password %><br />
+      <%= g.password_field :password %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
