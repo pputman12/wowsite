@@ -66,8 +66,6 @@ class Stat
   }
   
   LABELS = {
-    'name'   => "Name",
-    'realm'  => "Realm",
     'health' => "Health",
     'agi'    => "Agility",
     'sta'    => "Stamina",

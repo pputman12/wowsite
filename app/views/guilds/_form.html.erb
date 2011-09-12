@@ -1,4 +1,5 @@
-<%= form_for(@guild) do |f| %>
+<%= form_for(@guild, :html => {:name => 'form1'}) do |f| %>
+  <%= debug @guild %>
   <% if @guild.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@guild.errors.count, "error") %> prohibited this guild from being saved:</h2>
@@ -19,6 +20,7 @@
     <%= f.label :realm %><br />
     <%= f.text_field :realm %>
   </div>
+  <p id="guildvalid"></p>
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
@@ -31,3 +33,13 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $('#guild_name, #guild_realm').change(function() {
+    var name = $('#guild_name').val()
+    var realm = $('#guild_realm').val()
+    if (name && realm) {
+      console.log($.getJSON("http://us.battle.net/api/wow/guild/" + realm + "/"+ name))
+    }
+  })
+</script>
