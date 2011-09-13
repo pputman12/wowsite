@@ -47,11 +47,11 @@ class GuildsController < ApplicationController
     @guild.user = current_user
     @guild.email = current_user.email
     respond_to do |format|
-      if WowCommunityApi::Guild.find_by_realm_and_name(@guild.realm, @guild.name) && @guild.save
+      if @guild.save
         format.html { redirect_to(@guild, :notice => 'Guild was successfully registered.') }
         format.xml  { render :xml => @guild, :status => :created, :location => @guild }
       else
-        format.html { redirect_to(new_guild_path, :notice => 'Guild could not be registered') }
+        format.html { render :action => "new" }
         format.xml  { render :xml => @guild.errors, :status => :unprocessable_entity }
       end
     end

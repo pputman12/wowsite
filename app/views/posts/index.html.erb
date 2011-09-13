@@ -1,0 +1,21 @@
+<br /><h3><%= @topic.name %></h3>
+
+
+<% @posts.each do |post| %>
+  <table>
+    <tr>
+      <td><%= post.user.email %></td>
+    </tr>
+    <tr>
+      <td><%= post.context %></td>
+    </tr>
+    <tr>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  </table><br /><br />
+<% end %>
+
+<br />
+
+<%= link_to 'New Post', new_topic_post_path %>

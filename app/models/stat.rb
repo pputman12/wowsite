@@ -2,7 +2,6 @@ class Stat
   include Mongoid::Document
   field :race,   :type => Integer
   field :class_id, :type => Integer
-  field :race,     :type => Integer
   field :level,    :type => Integer
   field :health, :type => Integer
   field :powerType, :type => String
@@ -57,4 +56,31 @@ class Stat
   field :rangedHitPercent, :type => Float
   field :rangedHitRating, :type => Integer
   field :character_id, :type => Integer
+  RACES = {
+    6 => 'Undead',
+    7 => 'Elven'
+  }
+  CLASS_IDS = {
+    5 => 'Priest',
+    6 => 'Test'
+  }
+  
+  LABELS = {
+    'health' => "Health",
+    'agi'    => "Agility",
+    'sta'    => "Stamina",
+    'spr'    => "Spirit",
+    'int'    => "Intelligence",
+    'str'    => "Strength",
+    'race'   => "Race",
+    'class_id' => "Class"
+  }
+  
+  def class_id
+    CLASS_IDS[read_attribute(:class_id)]
+  end
+  
+  def race
+    RACES[read_attribute(:race)]
+  end
 end

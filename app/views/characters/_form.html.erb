@@ -19,7 +19,33 @@
     <%= f.label :realm %><br />
     <%= f.text_field :realm %>
   </div>
+  <div class="charactervalid"></div><br />
+  
+  <% f.fields_for :guilds do |g| %>
+    <div class="field">
+      <%= g.label :password %><br />
+      <%= g.password_field :password %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<script type="text/javascript" charset="utf-8">
+  $('#character_name, #character_realm').change(function() {
+    var name = $('#character_name').val()
+    var realm = $('#character_realm').val()
+    if (name && realm) {
+      $.jsonp({
+        url: "http://us.battle.net/api/wow/character/" + realm + "/"+ name + "?jsonp=?",
+        callbackParameter: 'callback',
+        success: function(data, status) {
+          $('div.charactervalid').html('Character found').css({color: 'green'})
+        },
+        error: function(request, status) {
+          $('div.charactervalid').html('Character does not exist on this realm').css({color: 'red'})
+        }
+      })
+    }
+  })
+</script>

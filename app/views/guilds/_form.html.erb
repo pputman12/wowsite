@@ -1,4 +1,4 @@
-<%= form_for(@guild) do |f| %>
+<%= form_for(@guild, :html => {:name => 'form1'}) do |f| %>
   <% if @guild.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@guild.errors.count, "error") %> prohibited this guild from being saved:</h2>
@@ -19,15 +19,32 @@
     <%= f.label :realm %><br />
     <%= f.text_field :realm %>
   </div>
+  <div class="guildvalid">
+  </div><br />
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%# f.label :email %><br />
-    <%# f.text_field :email %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $('#guild_name, #guild_realm').change(function() {
+    var name = $('#guild_name').val()
+    var realm = $('#guild_realm').val()
+    if (name && realm) {
+      $.jsonp({
+        url: "http://us.battle.net/api/wow/guild/" + realm + "/"+ name + "?jsonp=?",
+        callbackParameter: 'callback',
+        success: function(data, status) {
+          $('div.guildvalid').html('Guild found').css({color: 'green'})
+        },
+        error: function(request, status) {
+          $('div.guildvalid').html('Guild does not exist on this realm').css({color: 'red'})
+        }
+      })
+    }
+  })
+</script>

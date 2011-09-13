@@ -16,11 +16,12 @@
 
 
 <p>
-
-  <%  if stats = Character.get_stats(@character) %>
-    <% stats.attributes.each_pair do |name, value| %> 
-      <%= "#{name} = #{value}" unless name == "_id" || name == "character_id" %><br /> 
+  <% if @character.stats %>
+    <ul>
+    <% Stat::LABELS.each_pair do |k,v|%>
+      <%= content_tag(:li, "#{v}: #{@character.stats.send(k)}")%>
     <% end %>
+    </ul>
   <% end %>
 </p>
 <%= link_to 'Edit', edit_character_path(@character) %> |

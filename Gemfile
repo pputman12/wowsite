@@ -13,6 +13,9 @@ gem 'mongoid'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "wow_community_api"
 gem "devise"
+gem "bson_ext"
+gem "builder"
+gem "crack"
 # Use unicorn as the web server
 # gem 'unicorn'
 
