@@ -19,7 +19,8 @@
     <%= f.label :realm %><br />
     <%= f.text_field :realm %>
   </div>
-  <p id="guildvalid"></p>
+  <div class="guildvalid">
+  </div><br />
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
@@ -34,7 +35,16 @@
     var name = $('#guild_name').val()
     var realm = $('#guild_realm').val()
     if (name && realm) {
-      console.log($.getJSON("http://us.battle.net/api/wow/guild/" + realm + "/"+ name))
+      $.jsonp({
+        url: "http://us.battle.net/api/wow/guild/" + realm + "/"+ name + "?jsonp=?",
+        callbackParameter: 'callback',
+        success: function(data, status) {
+          $('div.guildvalid').html('Guild found').css({color: 'green'})
+        },
+        error: function(request, status) {
+          $('div.guildvalid').html('Guild does not exist on this realm').css({color: 'red'})
+        }
+      })
     }
   })
 </script>
