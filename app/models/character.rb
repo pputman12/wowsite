@@ -26,14 +26,13 @@ class Character < ActiveRecord::Base
     self.guild = Guild.where(['LOWER(name) = LOWER(?)', guild_name]).first
   end
   
-  def check_and_remove_guild
+  def check_and_remove_guild!
     if self.guild.name != WowCommunityApi::Character.find_by_realm_and_name(self.realm, self.name, "guild").guild.name
       self.destroy
     end
   end
 
   def fetch_stats!
-    self.check_and_remove_guild
     if stats =  WowCommunityApi::Character.find_by_realm_and_name(self.realm, self.name, "stats")
       if self.stats
         self.stats.update_attributes stats.stats.marshal_dump
