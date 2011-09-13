@@ -1,5 +1,4 @@
 <%= form_for(@guild, :html => {:name => 'form1'}) do |f| %>
-  <%= debug @guild %>
   <% if @guild.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@guild.errors.count, "error") %> prohibited this guild from being saved:</h2>
@@ -24,10 +23,6 @@
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%# f.label :email %><br />
-    <%# f.text_field :email %>
   </div>
   <div class="actions">
     <%= f.submit %>
