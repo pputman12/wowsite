@@ -6,8 +6,10 @@ gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'activerecord-jdbcpostgresql-adapter'
+#gem 'activerecord-jdbcpostgresql-adapter'
+gem 'jdbc-sqlite3'
 #gem 'sqlite3'
+gem 'activerecord-jdbc-adapter'
 gem 'bson_ext'
 gem 'mongoid'
 gem "bcrypt-ruby", :require => "bcrypt"
